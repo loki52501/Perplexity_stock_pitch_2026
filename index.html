@@ -7,286 +7,260 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#faf9f6;--card:#fff;--ink:#1a1a1a;--ink2:#555;--muted:#999;
---teal:#0c7c8a;--teal2:#0a6570;--tealbg:#e4f4f6;
---gold:#b45309;--goldbg:#fef4e6;
---green:#15803d;--greenbg:#e5f5ec;
---red:#c43a31;--redbg:#fde8e7;
---border:#e2dfd8;
-}
+:root{--bg:#faf9f6;--card:#fff;--ink:#1a1a1a;--ink2:#555;--muted:#999;--teal:#0c7c8a;--tealbg:#e4f4f6;--gold:#b45309;--goldbg:#fef4e6;--green:#15803d;--greenbg:#e5f5ec;--red:#c43a31;--redbg:#fde8e7;--border:#e2dfd8}
 body{background:var(--bg);font-family:'Outfit',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{max-width:1100px;margin:0 auto;padding:28px 28px 40px}
+.pg{max-width:1100px;margin:0 auto;padding:24px 24px 36px}
 
 /* HEADER */
-.hdr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:16px;border-bottom:2px solid var(--teal);margin-bottom:20px}
-.hdr-left .ticker{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:2.5px;font-weight:600;margin-bottom:4px}
-.hdr-left h1{font-family:'Fraunces',serif;font-weight:900;font-size:30px;line-height:1.1}
-.hdr-left h1 span{color:var(--teal)}
-.hdr-left .sub{font-size:13px;color:var(--ink2);margin-top:6px;max-width:600px;line-height:1.55}
-.hdr-right{text-align:right}
-.hdr-right .pt{font-family:'Fraunces',serif;font-size:44px;font-weight:900;color:var(--teal);line-height:1}
-.hdr-right .up{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--green);font-weight:600;margin-top:3px}
-.hdr-right .tag{font-size:11px;color:var(--muted);margin-top:2px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:14px;border-bottom:2px solid var(--teal);margin-bottom:16px}
+.hdr-l .tk{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--teal);letter-spacing:2.5px;font-weight:600;margin-bottom:3px}
+.hdr-l h1{font-family:'Fraunces',serif;font-weight:900;font-size:28px;line-height:1.1}
+.hdr-l h1 span{color:var(--teal)}
+.hdr-l .sub{font-size:12px;color:var(--ink2);margin-top:5px;max-width:580px;line-height:1.5}
+.hdr-r{text-align:right}
+.hdr-r .pt{font-family:'Fraunces',serif;font-size:40px;font-weight:900;color:var(--teal);line-height:1}
+.hdr-r .up{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--green);font-weight:600;margin-top:2px}
+.hdr-r .tg{font-size:10px;color:var(--muted);margin-top:1px}
 
-/* KPI STRIP */
-.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:20px}
-.kpi{text-align:center;padding:10px 6px;background:var(--card);border:1px solid var(--border);border-radius:6px}
-.kpi .v{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700}
-.kpi .l{font-size:9px;color:var(--muted);margin-top:1px;text-transform:uppercase;letter-spacing:.4px}
-.kpi .s{font-size:9px;color:var(--teal);font-weight:600}
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px}
+.k{text-align:center;padding:8px 4px;background:var(--card);border:1px solid var(--border);border-radius:5px}
+.k .v{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700}
+.k .l{font-size:8px;color:var(--muted);margin-top:1px;text-transform:uppercase;letter-spacing:.3px}
+.k .s{font-size:8px;color:var(--teal);font-weight:600}
 
-/* SECTION */
-.sec{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.sec::after{content:'';flex:1;height:1px;background:var(--border)}
+/* SEC */
+.sc{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.sc::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* GRIDS */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.g23{display:grid;grid-template-columns:2fr 3fr;gap:14px}
-.g32{display:grid;grid-template-columns:3fr 2fr;gap:14px}
-.mb{margin-bottom:18px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g23{display:grid;grid-template-columns:2fr 3fr;gap:12px}
+.g32{display:grid;grid-template-columns:3fr 2fr;gap:12px}
+.mb{margin-bottom:14px}
 
-/* STAT BOX */
-.sbox{padding:16px;border-radius:8px;text-align:center}
-.sbox.t{background:var(--tealbg);border:1px solid #c0e0e5}
-.sbox .sv{font-family:'Fraunces',serif;font-size:38px;font-weight:900;color:var(--teal)}
-.sbox .sl{font-size:11px;color:var(--ink2);margin-top:3px;line-height:1.4}
+/* STAT */
+.sb{padding:12px;border-radius:7px;text-align:center;background:var(--tealbg);border:1px solid #c0e0e5}
+.sb .sv{font-family:'Fraunces',serif;font-size:34px;font-weight:900;color:var(--teal)}
+.sb .sl{font-size:10px;color:var(--ink2);margin-top:2px;line-height:1.35}
 
 /* BARRIERS */
-.blist{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.br{display:flex;align-items:center;padding:6px 10px;background:var(--card);border:1px solid var(--border);border-radius:5px;gap:8px;font-size:10px}
-.br .bn{font-weight:700;color:var(--teal);min-width:100px;flex-shrink:0}
-.br .bd{color:var(--ink2);flex:1;font-size:10px}
-.br .bt{font-family:'IBM Plex Mono',monospace;font-size:8px;padding:1px 5px;border-radius:3px;font-weight:600;flex-shrink:0}
-.bt-p{background:var(--greenbg);color:var(--green)}
-.bt-d{background:var(--goldbg);color:var(--gold)}
+.bl{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.br{display:flex;align-items:center;padding:5px 8px;background:var(--card);border:1px solid var(--border);border-radius:4px;gap:6px;font-size:9px}
+.br .bn{font-weight:700;color:var(--teal);min-width:90px;flex-shrink:0}
+.br .bd{color:var(--ink2);flex:1}
+.br .bt{font-family:'IBM Plex Mono',monospace;font-size:7px;padding:1px 4px;border-radius:2px;font-weight:600;flex-shrink:0}
+.bp{background:var(--greenbg);color:var(--green)}
+.bx{background:var(--goldbg);color:var(--gold)}
 
 /* FLOW */
-.flow{display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr;gap:0;align-items:stretch}
-.fb{padding:12px 10px;border-radius:7px;border:1px solid var(--border);background:var(--card)}
-.fb.mid{background:var(--tealbg);border-color:#c0e0e5}
-.fb.end{background:var(--greenbg);border-color:#b0dfc4}
-.fb .fl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:3px}
-.fb .ft{font-family:'Fraunces',serif;font-weight:700;font-size:13px;margin-bottom:3px}
-.fb .fd{font-size:10px;color:var(--ink2);line-height:1.45}
-.fa{display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--teal)}
+.fl{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;gap:0;align-items:stretch}
+.fb{padding:10px 8px;border-radius:6px;border:1px solid var(--border);background:var(--card)}
+.fb.m{background:var(--tealbg);border-color:#c0e0e5}
+.fb.e{background:var(--greenbg);border-color:#b0dfc4}
+.fb .fl2{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:2px}
+.fb .ft{font-family:'Fraunces',serif;font-weight:700;font-size:12px;margin-bottom:2px}
+.fb .fd{font-size:9px;color:var(--ink2);line-height:1.4}
+.fa{display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--teal)}
 
-/* MINI TABLE */
-.mt{width:100%;border-collapse:collapse;font-size:10px}
-.mt th{background:var(--teal);color:#fff;padding:5px 6px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;text-align:center}
-.mt th:first-child{text-align:left;border-radius:4px 0 0 0}
-.mt th:last-child{border-radius:0 4px 0 0}
-.mt td{padding:5px 6px;text-align:center;border-bottom:1px solid var(--border)}
+/* TABLE */
+.mt{width:100%;border-collapse:collapse;font-size:9px}
+.mt th{background:var(--teal);color:#fff;padding:4px 5px;font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:600;text-align:center}
+.mt th:first-child{text-align:left;border-radius:3px 0 0 0}
+.mt th:last-child{border-radius:0 3px 0 0}
+.mt td{padding:4px 5px;text-align:center;border-bottom:1px solid var(--border)}
 .mt td:first-child{text-align:left;font-weight:600}
-.mt .hi{color:var(--teal);font-weight:700;font-family:'IBM Plex Mono',monospace}
+.hi{color:var(--teal);font-weight:700;font-family:'IBM Plex Mono',monospace}
 
-/* CATALYST */
-.cat{padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card);display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start}
-.cn{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:13px;font-weight:700}
-.cat h3{font-size:12px;font-weight:700;margin-bottom:1px}
-.cat p{font-size:10px;color:var(--ink2);line-height:1.4}
-.cat .cm{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--teal);margin-top:3px;font-weight:600}
+/* CATS */
+.ct{padding:10px;border-radius:6px;border:1px solid var(--border);background:var(--card);display:grid;grid-template-columns:26px 1fr;gap:8px}
+.cn{width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:12px;font-weight:700}
+.ct h3{font-size:11px;font-weight:700}
+.ct p{font-size:9px;color:var(--ink2);line-height:1.35}
+.ct .cm{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--teal);margin-top:2px;font-weight:600}
 
 /* CASES */
-.cases{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:10px}
-.case{padding:14px;border-radius:8px;text-align:center;border:1px solid var(--border)}
-.case.bull{background:var(--greenbg);border-color:#b0dfc4}
-.case.base{background:var(--tealbg);border-color:#a8dce5}
-.case.bear{background:var(--redbg);border-color:#f5c4c2}
-.case .cl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
-.case.bull .cl{color:var(--green)}.case.base .cl{color:var(--teal)}.case.bear .cl{color:var(--red)}
-.case .cp{font-family:'Fraunces',serif;font-size:30px;font-weight:900;margin:3px 0 2px}
-.case.bull .cp{color:var(--green)}.case.base .cp{color:var(--teal)}.case.bear .cp{color:var(--red)}
-.case .cr{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink2)}
-.case .cd{font-size:9px;color:var(--muted);margin-top:3px}
+.cs{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px}
+.c{padding:10px;border-radius:7px;text-align:center;border:1px solid var(--border)}
+.c.bu{background:var(--greenbg);border-color:#b0dfc4}
+.c.ba{background:var(--tealbg);border-color:#a8dce5}
+.c.be{background:var(--redbg);border-color:#f5c4c2}
+.c .cl{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.c.bu .cl{color:var(--green)}.c.ba .cl{color:var(--teal)}.c.be .cl{color:var(--red)}
+.c .cp{font-family:'Fraunces',serif;font-size:26px;font-weight:900;margin:2px 0 1px}
+.c.bu .cp{color:var(--green)}.c.ba .cp{color:var(--teal)}.c.be .cp{color:var(--red)}
+.c .cr{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink2)}
+.c .cd{font-size:8px;color:var(--muted);margin-top:2px}
 
 /* TARGET */
-.tgt{text-align:center;padding:14px;background:var(--teal);border-radius:8px;color:#fff}
-.tgt .tp{font-family:'Fraunces',serif;font-size:32px;font-weight:900}
-.tgt .ts{font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.85;margin-top:2px}
+.tg2{text-align:center;padding:10px;background:var(--teal);border-radius:7px;color:#fff}
+.tg2 .tp{font-family:'Fraunces',serif;font-size:28px;font-weight:900}
+.tg2 .ts{font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.85;margin-top:1px}
+
+/* WACC/BRIDGE */
+.wb{padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:5px;font-size:9px}
+.wb h4{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--teal);margin-bottom:4px;font-weight:600}
+.wr{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid var(--border)}
+.wr:last-child{border-bottom:none;font-weight:700;color:var(--teal);font-family:'IBM Plex Mono',monospace}
+
+/* FLOOR */
+.flr{padding:7px;text-align:center;background:var(--tealbg);border:1px solid #c0e0e5;border-radius:5px;font-size:9px;color:var(--ink2)}
+.flr strong{color:var(--teal)}
 
 /* RISKS */
-.rlist{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.rk{padding:8px 10px;border-radius:6px;border:1px solid var(--border);background:var(--card);display:flex;justify-content:space-between;align-items:start;gap:8px}
-.rk h4{font-size:11px;font-weight:700;margin-bottom:1px}
-.rk p{font-size:9px;color:var(--ink2);line-height:1.35}
+.rl{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.rk{padding:6px 8px;border-radius:5px;border:1px solid var(--border);background:var(--card);display:flex;justify-content:space-between;align-items:start;gap:6px}
+.rk h4{font-size:10px;font-weight:700;margin-bottom:1px}
+.rk p{font-size:8px;color:var(--ink2);line-height:1.3}
 .rbs{display:flex;gap:2px;flex-shrink:0}
-.rb{font-family:'IBM Plex Mono',monospace;font-size:7px;padding:1px 4px;border-radius:2px;font-weight:600}
+.rb{font-family:'IBM Plex Mono',monospace;font-size:6px;padding:1px 3px;border-radius:2px;font-weight:600}
 .rb-lm{background:var(--goldbg);color:var(--gold)}
+.rb-mh{background:#fde8d0;color:#9a5c10}
 .rb-ll{background:var(--greenbg);color:var(--green)}
 .rb-ih{background:var(--redbg);color:var(--red)}
 .rb-im{background:var(--goldbg);color:var(--gold)}
-.rb-lh{background:var(--goldbg);color:var(--gold)}
 
-/* WACC card */
-.wacc{padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:10px}
-.wacc h4{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--teal);margin-bottom:6px;font-weight:600}
-.wr{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--border)}
-.wr:last-child{border-bottom:none;font-weight:700;color:var(--teal);font-family:'IBM Plex Mono',monospace}
+/* INSIGHT + AXON */
+.ins{padding:8px 10px;background:var(--goldbg);border:1px solid #edd9b5;border-radius:5px;font-size:9px;color:#6b4a10;line-height:1.4}
+.ins strong{color:#4a3008}
+.ax{padding:8px 10px;background:#f3edf9;border:1px solid #d6c6e6;border-radius:5px;font-size:9px;color:#4a2d6b;line-height:1.35}
+.ax strong{color:#351f4f}
 
-/* BRIDGE */
-.bridge{padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:10px}
-.bridge h4{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--teal);margin-bottom:6px;font-weight:600}
-
-/* FLOOR NOTE */
-.floor{padding:10px;text-align:center;background:var(--tealbg);border:1px solid #c0e0e5;border-radius:6px;font-size:11px;color:var(--ink2)}
-.floor strong{color:var(--teal)}
-
-/* CLOSING */
-.close{text-align:center;padding:14px;background:var(--ink);border-radius:8px;color:#fff;margin-top:18px}
-.close .cs{font-family:'Fraunces',serif;font-size:18px;font-weight:900}
-.close .cd{font-family:'IBM Plex Mono',monospace;font-size:10px;opacity:.6;margin-top:3px}
-
-/* INSIGHT BOX */
-.insight{padding:12px 14px;background:var(--goldbg);border:1px solid #edd9b5;border-radius:6px;font-size:11px;color:#6b4a10;line-height:1.5}
-.insight strong{color:#4a3008}
-
-/* AXON */
-.axon{padding:10px 12px;background:#f3edf9;border:1px solid #d6c6e6;border-radius:6px;font-size:10px;color:#4a2d6b;line-height:1.45}
-.axon strong{color:#351f4f}
+/* CLOSE */
+.cl2{text-align:center;padding:12px;background:var(--ink);border-radius:7px;color:#fff;margin-top:14px}
+.cl2 .c1{font-family:'Fraunces',serif;font-size:16px;font-weight:900}
+.cl2 .c2{font-family:'IBM Plex Mono',monospace;font-size:9px;opacity:.6;margin-top:2px}
 
 @media(max-width:768px){
-  .hdr{flex-direction:column;align-items:flex-start;gap:12px}
-  .hdr-right{text-align:left}
-  .kpis{grid-template-columns:repeat(3,1fr)}
-  .g2,.g23,.g32,.blist,.rlist,.cases{grid-template-columns:1fr}
-  .flow{grid-template-columns:1fr;gap:4px}
-  .fa{transform:rotate(90deg);padding:2px}
-  .g3{grid-template-columns:1fr}
-  .g4,.g5{grid-template-columns:repeat(2,1fr)}
+  .hdr{flex-direction:column;gap:10px}.hdr-r{text-align:left}
+  .kpis{grid-template-columns:repeat(3,1fr)}.g2,.g23,.g32,.bl,.rl,.cs{grid-template-columns:1fr}
+  .fl{grid-template-columns:1fr;gap:4px}.fa{transform:rotate(90deg);padding:2px}
 }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="pg">
 
-  <!-- ① HEADER -->
+  <!-- HEADER -->
   <div class="hdr">
-    <div class="hdr-left">
-      <div class="ticker">CELLEBRITE DI LTD · NASDAQ: CLBT · $14.00 · MKT CAP $3.5B · EV ~$3.0B</div>
+    <div class="hdr-l">
+      <div class="tk">CELLEBRITE DI LTD · NASDAQ: CLBT · $14.00 · MKT CAP $3.5B · EV ~$3.0B</div>
       <h1>The Market Is Using <span>the Wrong Mental Model</span></h1>
       <p class="sub">The market prices Cellebrite as a declining Israeli hardware vendor. It is actually a regulated-vertical platform monopoly — 84% gross margins, zero competitive losses across 64 government contracts, and five structural barriers blocking Big Tech permanently.</p>
     </div>
-    <div class="hdr-right">
+    <div class="hdr-r">
       <div class="pt">$21.56</div>
-      <div class="up">▲ 54% upside · 24% IRR</div>
-      <div class="tag">Probability-weighted · BUY · HIGH conviction</div>
+      <div class="up">▲ 54% · 24% 2yr IRR</div>
+      <div class="tg">Probability-weighted · BUY</div>
     </div>
   </div>
 
-  <!-- ② KPIs -->
+  <!-- KPIs -->
   <div class="kpis">
-    <div class="kpi"><div class="v">6.3x</div><div class="l">EV/NTM Rev</div><div class="s">vs 8.1x peers</div></div>
-    <div class="kpi"><div class="v">53</div><div class="l">Rule of 40</div><div class="s">#2 (Veeva 56)</div></div>
-    <div class="kpi"><div class="v">84%</div><div class="l">Gross Margin</div><div class="s">#1 in comp set</div></div>
-    <div class="kpi"><div class="v">34%</div><div class="l">FCF Margin</div><div class="s">$160M FY25</div></div>
-    <div class="kpi"><div class="v">90%</div><div class="l">Subscription</div><div class="s">Up from 80% FY22</div></div>
-    <div class="kpi"><div class="v">4</div><div class="l">Analysts</div><div class="s">Israeli small-cap</div></div>
+    <div class="k"><div class="v">6.3x</div><div class="l">EV/NTM Rev</div><div class="s">vs 8.1x analogs</div></div>
+    <div class="k"><div class="v">53</div><div class="l">Rule of 40</div><div class="s">#2 — most growth-tilted</div></div>
+    <div class="k"><div class="v">84%</div><div class="l">Gross Margin</div><div class="s">#1 in analog set</div></div>
+    <div class="k"><div class="v">34%</div><div class="l">FCF Margin</div><div class="s">$160M FY25 · 11x in 3yr</div></div>
+    <div class="k"><div class="v">90%</div><div class="l">Subscription</div><div class="s">Up from 80% FY22</div></div>
+    <div class="k"><div class="v">4</div><div class="l">Analysts</div><div class="s">Discovery discount</div></div>
   </div>
 
-  <!-- ③ MOAT -->
-  <div class="sec">Why Big Tech Can't Enter — Moat Defensibility (4/5)</div>
-  <div class="g2 mb" style="margin-bottom:8px">
-    <div class="sbox t"><div class="sv">ZERO</div><div class="sl">vendor displacements · 64 gov contracts · 3 years</div></div>
-    <div class="sbox t"><div class="sv">8.7x</div><div class="sl">Cellebrite $60.2M vs Magnet $6.9M · 72% wallet share</div></div>
+  <!-- MOAT -->
+  <div class="sc">Moat — Why Big Tech Is Permanently Blocked (Rated 4/5)</div>
+  <div class="g2 mb" style="margin-bottom:6px">
+    <div class="sb"><div class="sv">ZERO</div><div class="sl">vendor displacements · 64 gov contracts · 3 years<br><span style="font-size:8px;color:var(--muted)">Source: SAM.gov procurement analysis — directionally strong</span></div></div>
+    <div class="sb"><div class="sv">8.7x</div><div class="sl">Cellebrite $60.2M vs Magnet $6.9M<br>72% wallet share in all 8 dual-vendor agencies</div></div>
   </div>
-  <div class="blist mb">
-    <div class="br"><span class="bn">Technical Conflict</span><span class="bd">Forensic tools exploit vulnerabilities Apple/Google patch</span><span class="bt bt-p">Permanent</span></div>
-    <div class="br"><span class="bn">Reputational Risk</span><span class="bd">NSO Pegasus made surveillance toxic for Big Tech</span><span class="bt bt-p">Permanent</span></div>
-    <div class="br"><span class="bn">Market Size Floor</span><span class="bd">TAM ~$5B — below Big Tech's $10-20B threshold</span><span class="bt bt-p">Permanent</span></div>
-    <div class="br"><span class="bn">Export Controls</span><span class="bd">Wassenaar favors Israel's liberalized regime</span><span class="bt bt-d">Decaying</span></div>
+  <div class="bl mb">
+    <div class="br"><span class="bn">Technical Conflict</span><span class="bd">Forensic tools exploit vulnerabilities Apple/Google spend billions to patch</span><span class="bt bp">Permanent</span></div>
+    <div class="br"><span class="bn">Reputational Risk</span><span class="bd">NSO Pegasus made surveillance toxic for Big Tech ESG</span><span class="bt bp">Permanent</span></div>
+    <div class="br"><span class="bn">Market Size Floor</span><span class="bd">TAM ~$5B — below Big Tech's $10-20B threshold</span><span class="bt bp">Permanent</span></div>
+    <div class="br"><span class="bn">Export + Talent</span><span class="bd">Wassenaar favors Israel · 80% founders ex-Unit 8200</span><span class="bt bx">Decaying</span></div>
   </div>
 
-  <!-- ④ PLATFORM -->
-  <div class="sec">Platform Moat — Business Model Transformation (4.5/5)</div>
-  <div class="flow mb">
-    <div class="fb"><div class="fl">Wedge</div><div class="ft">Device Access (UFED)</div><div class="fd">7,000 customers · ~45% ARR, declining</div></div>
+  <!-- PLATFORM -->
+  <div class="sc">Platform Moat — Business Model Transformation (Rated 4.5/5)</div>
+  <div class="fl mb">
+    <div class="fb"><div class="fl2">1. Wedge</div><div class="ft">Device Access (UFED)</div><div class="fd">7,000 customers · 35K+ device profiles<br>~45% ARR, declining share</div></div>
     <div class="fa">→</div>
-    <div class="fb mid"><div class="fl">Platform</div><div class="ft">Inseyets · Guardian · Pathfinder</div><div class="fd">Guardian 100%+ growth 6 qtrs · 10% uplift per conversion</div></div>
+    <div class="fb m"><div class="fl2">2. Platform</div><div class="ft">Inseyets · Guardian · Pathfinder</div><div class="fd">55% converted (target 80%+) · 10% ARR uplift<br>Guardian 100%+ growth 6 qtrs · Corellium ARM virt.</div></div>
     <div class="fa">→</div>
-    <div class="fb end"><div class="fl">Lock-in</div><div class="ft">Workflow + Data + Brand</div><div class="fd">"Cellebrite" is a verb · $228K/yr switching cost · RPO $406M</div></div>
+    <div class="fb e"><div class="fl2">3. Lock-in</div><div class="ft">Workflow + Data + Brand</div><div class="fd">"Cellebrite" = verb · Axon Evidence.com integration<br>$228K/yr switching cost · RPO $406M</div></div>
   </div>
 
-  <!-- ⑤ FINANCIALS -->
-  <div class="sec">Financial Profile — FCF grew 11x in 3 years</div>
+  <!-- FINANCIALS -->
+  <div class="sc">Financial Profile — FCF grew 11x in 3 years · 17% organic ARR growth</div>
   <div class="g32 mb">
     <table class="mt">
-      <tr><th>Metric</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>FY26E</th><th>FY27E</th></tr>
-      <tr><td>Revenue ($M)</td><td>$271</td><td>$325</td><td>$401</td><td class="hi">$476</td><td>$566</td><td>$668</td></tr>
-      <tr><td>FCF ($M)</td><td>$14</td><td>$97</td><td>$124</td><td class="hi">$160</td><td>$191</td><td>$233</td></tr>
-      <tr><td>FCF Margin</td><td>5%</td><td>30%</td><td>31%</td><td class="hi">34%</td><td>34%</td><td>35%</td></tr>
-      <tr><td>Gross Margin</td><td>81%</td><td>84%</td><td>84%</td><td>84%</td><td>85%</td><td>85%</td></tr>
-      <tr><td>NRR*</td><td>130%</td><td>125%</td><td>124%</td><td>116%</td><td colspan="2" style="font-size:9px;color:var(--gold)">*Denominator effect</td></tr>
+      <tr><th></th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>FY26E</th><th>FY27E</th><th>FY30E</th></tr>
+      <tr><td>Revenue</td><td>$271M</td><td>$325M</td><td>$401M</td><td class="hi">$476M</td><td>$566M</td><td>$668M</td><td>$1,043M</td></tr>
+      <tr><td>FCF</td><td>$14M</td><td>$97M</td><td>$124M</td><td class="hi">$160M</td><td>$191M</td><td>$233M</td><td>$391M</td></tr>
+      <tr><td>FCF Margin</td><td>5%</td><td>30%</td><td>31%</td><td class="hi">34%</td><td>34%</td><td>35%</td><td>38%</td></tr>
+      <tr><td>Gross Margin</td><td>81%</td><td>84%</td><td>84%</td><td>84%</td><td>85%</td><td>85%</td><td>85%</td></tr>
+      <tr><td>ARR Growth</td><td>—</td><td>+27%</td><td>+25%</td><td>+21%*</td><td>+19%</td><td>+18%</td><td>+15%</td></tr>
     </table>
-    <div style="display:flex;flex-direction:column;gap:6px">
-      <div class="kpi" style="flex:1"><div class="v" style="font-size:18px">$476M → $1,043M</div><div class="l">Revenue FY25 → FY30E</div><div class="s">19% → 15% decel (conservative)</div></div>
-      <div class="kpi" style="flex:1"><div class="v" style="font-size:18px">$160M → $391M</div><div class="l">FCF FY25 → FY30E</div><div class="s">34% → 38% margin expansion</div></div>
-      <div style="padding:8px 10px;background:var(--goldbg);border:1px solid #edd9b5;border-radius:6px;font-size:9px;color:#7a5a1e;line-height:1.4"><strong>NRR 130%→116%:</strong> Base ARR grew 2.6x ($187M→$481M). Absolute expansion up ($68M→$85M). Gross retention 91%→93%. Same churn rate, bigger denominator.</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="padding:6px 8px;background:var(--goldbg);border:1px solid #edd9b5;border-radius:4px;font-size:8px;color:#7a5a1e;line-height:1.35"><strong>*ARR FY25:</strong> 21% total, <strong>17% organic</strong> (ex-Corellium $16.1M). Projections anchored in 17%.</div>
+      <div style="padding:6px 8px;background:var(--goldbg);border:1px solid #edd9b5;border-radius:4px;font-size:8px;color:#7a5a1e;line-height:1.35"><strong>NRR 130%→116%:</strong> Denominator effect. Base 2.6x ($185M→$481M). Expansion UP $68M→$85M. Gross retention 91%→93%.</div>
+      <div class="k" style="flex:1"><div class="v" style="font-size:14px">$160M → $391M</div><div class="l">FCF FY25→FY30</div><div class="s">Rev 19%→15% decel · R&D flat at 23%</div></div>
     </div>
   </div>
 
-  <!-- ⑥ CATALYSTS + AXON -->
-  <div class="sec">Three Catalysts · Next 6 Months + Strategic Angle</div>
+  <!-- CATALYSTS + STRATEGIC -->
+  <div class="sc">Catalysts (6 months) + Strategic Angle</div>
   <div class="g23 mb">
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="cat"><div class="cn">1</div><div><h3>FedRAMP High ATO</h3><p>DOJ sponsorship confirmed. Unlocks Guardian + cloud for entire federal market.</p><div class="cm">Q1-Q2 2026 · Step-change 20%+</div></div></div>
-      <div class="cat"><div class="cn">2</div><div><h3>Q1 Federal Recovery</h3><p>Guided $491-493M ARR (+20-21%). Federal expected to exceed company growth.</p><div class="cm">May 2026 · Moderate 10-20%</div></div></div>
-      <div class="cat"><div class="cn">3</div><div><h3>Genesis AI</h3><p>Agentic AI launched Mar 16. Zero AI revenue in guidance = pure upside.</p><div class="cm">Q2-Q3 2026 · Narrative shift</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div class="ct"><div class="cn">1</div><div><h3>FedRAMP High ATO</h3><p>DOJ sponsorship confirmed. Unlocks Guardian + cloud for entire federal market. Thesis holds without it.</p><div class="cm">Q1-Q2 2026 · Step-change 20%+</div></div></div>
+      <div class="ct"><div class="cn">2</div><div><h3>Q1 Earnings: Federal Recovery</h3><p>Guided $491-493M ARR (+20-21%). Federal expected to exceed company growth rate.</p><div class="cm">May 2026 · Moderate 10-20%</div></div></div>
+      <div class="ct"><div class="cn">3</div><div><h3>Genesis AI Monetization</h3><p>Agentic AI launched Mar 16. Zero AI revenue in guidance = pure upside to consensus.</p><div class="cm">Q2-Q3 2026 · Narrative shift</div></div></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="axon"><strong>Axon Enterprise ($33B)</strong> invested $90M in 2021 PIPE. Integrated Cellebrite into Evidence.com. Needham: <em>"could be the first step in Axon's ultimate acquisition."</em> At $3.5B, a 30-40% premium acquisition = $4.5-5B, just 13-15% of Axon's EV. <strong>Free option in the stock.</strong></div>
-      <div class="insight"><strong>The Differentiated Insight:</strong> Investors see "Israel + government + forensics + $3.5B" and apply a Cognyte-like 1.5x discount. The operating profile — 84% GM, 34% FCF, zero losses, verb-status brand — belongs at Veeva/Tyler 8-10x. <strong>When coverage expands and the market reclassifies from "gov contractor" to "vertical SaaS platform," the multiple re-rates.</strong></div>
-      <div class="kpi"><div class="v" style="font-size:16px">4 → 7-8 analysts</div><div class="l">Coverage expansion expected</div><div class="s">MS conference Mar 2026 = precursor</div></div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div class="ax"><strong>Axon ($33B)</strong> invested $90M in 2021 PIPE · Integrated into Evidence.com · Needham: <em>"first step in ultimate acquisition"</em> · At $3.5B, a 30-40% premium = $4.5-5B (13-15% of Axon EV). <strong>Free option.</strong> Axon chose to invest $90M rather than build — <strong>validates Big Tech barriers are real.</strong></div>
+      <div class="ins"><strong>The Differentiated Insight:</strong> Categorization error + coverage neglect. Investors see "Israel + gov + forensics" → apply Cognyte 1.5x. Operating profile (84% GM, 34% FCF, zero losses, verb-status brand) matches regulated-vertical SaaS platforms that trade 8-10x. <strong>These are structural analogs (Veeva in pharma, Tyler in municipal gov), NOT competitors. When coverage goes from 4→8 analysts, market reclassifies "gov contractor" → "vertical SaaS platform."</strong></div>
     </div>
   </div>
 
-  <!-- ⑦ VALUATION -->
-  <div class="sec">Valuation — Scenario Analysis + DCF Floor</div>
-  <div class="g23 mb" style="margin-bottom:8px">
+  <!-- VALUATION -->
+  <div class="sc">Valuation — DCF Floor + Scenarios + Comps</div>
+  <div class="g23 mb" style="margin-bottom:6px">
     <div>
-      <div class="cases" style="margin-bottom:8px">
-        <div class="case bull"><div class="cl">Bull · 25%</div><div class="cp">$27.69</div><div class="cr">+98% · 41% IRR</div><div class="cd">$691M · 10.0x</div></div>
-        <div class="case base"><div class="cl">Base · 55%</div><div class="cp">$22.75</div><div class="cr">+63% · 27% IRR</div><div class="cd">$668M · 8.5x</div></div>
-        <div class="case bear"><div class="cl">Bear · 20%</div><div class="cp">$10.62</div><div class="cr">-24% · -13% IRR</div><div class="cd">$623M · 4.0x</div></div>
+      <div class="cs" style="margin-bottom:6px">
+        <div class="c bu"><div class="cl">Bull · 25%</div><div class="cp">$27.69</div><div class="cr">+98% · 41% IRR</div><div class="cd">$691M · 10.0x · Fed + AI</div></div>
+        <div class="c ba"><div class="cl">Base · 55%</div><div class="cp">$22.75</div><div class="cr">+63% · 27% IRR</div><div class="cd">$668M · 8.5x · Inseyets</div></div>
+        <div class="c be"><div class="cl">Bear · 20%</div><div class="cp">$10.62</div><div class="cr">-24% · -13% IRR</div><div class="cd">$623M · 4.0x · Real pain</div></div>
       </div>
-      <div class="tgt"><div class="tp">$21.56</div><div class="ts">54% Upside · 24% 2-Year IRR · BUY</div></div>
+      <div class="tg2"><div class="tp">$21.56</div><div class="ts">54% Upside · 24% 2yr IRR · 2.7x Asymmetry · BUY</div></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="wacc"><h4>WACC Build → 13.1%</h4>
-        <div class="wr"><span>Risk-Free (10yr UST)</span><span>4.3%</span></div>
-        <div class="wr"><span>Equity Risk Premium</span><span>5.5%</span></div>
-        <div class="wr"><span>Beta (small-cap gov-tech)</span><span>1.15</span></div>
-        <div class="wr"><span>Size Premium</span><span>2.0%</span></div>
-        <div class="wr"><span>Israel Country Risk</span><span>0.5%</span></div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div class="wb"><h4>WACC 13.1% (Conservative)</h4>
+        <div class="wr"><span>Risk-Free</span><span>4.3%</span></div>
+        <div class="wr"><span>ERP + Beta (1.15)</span><span>6.3%</span></div>
+        <div class="wr"><span>Size + Israel risk</span><span>2.5%</span></div>
         <div class="wr"><span>WACC</span><span>13.1%</span></div>
       </div>
-      <div class="bridge"><h4>DCF Value Bridge</h4>
-        <div class="wr"><span>PV of FCFs (FY26-30)</span><span>$958M</span></div>
-        <div class="wr"><span>PV of Terminal Value</span><span>$2,278M</span></div>
+      <div class="wb"><h4>DCF Value Bridge → $14.79</h4>
+        <div class="wr"><span>PV FCFs (FY26-30)</span><span>$958M</span></div>
+        <div class="wr"><span>PV Terminal (10.8x FCF)</span><span>$2,278M</span></div>
         <div class="wr"><span>+ Net Cash</span><span>$535M</span></div>
         <div class="wr"><span>÷ 255M shares</span><span>$14.79</span></div>
       </div>
-      <div class="floor">DCF: <strong>$14.79</strong> (≈ current price) · Comps: <strong>$22.27</strong> (8.1x + 12.5% premium) · <strong>The $7.48 gap = the platform premium the market doesn't pay for</strong></div>
+      <div class="flr">DCF <strong>$14.79</strong> ≈ current price · Comps <strong>$22.27</strong> (8.1x + 12.5% premium, excl PLTR) · <strong>$7.48 gap = platform premium the market doesn't pay</strong></div>
     </div>
   </div>
-  <p style="text-align:center;font-size:11px;color:var(--ink2);margin-bottom:18px">Bear models real pain: 10% growth + 4x terminal. <strong style="color:var(--teal)">2.7x more upside than downside.</strong> · Comps median 8.1x excl. PLTR (93.4x outlier)</p>
 
-  <!-- ⑧ RISKS -->
-  <div class="sec">Key Risks</div>
-  <div class="rlist mb">
-    <div class="rk"><div><h4>Apple/Google restrict forensic access</h4><p>Industry-wide, not competitive. Platform 55%+ of ARR. Spring '26 covers iPhone 17.</p></div><div class="rbs"><span class="rb rb-lm">L:Med</span><span class="rb rb-ih">I:High</span></div></div>
-    <div class="rk"><div><h4>Federal freeze extends FY2027</h4><p>Fed ~30% ARR. State/local +19%, EMEA +24%, APAC +23% offset. Bull case loses ~$3-4.</p></div><div class="rbs"><span class="rb rb-lh">L:M-H</span><span class="rb rb-ih">I:High</span></div></div>
-    <div class="rk"><div><h4>NRR below 110%</h4><p>Denominator effect. Gross retention 91%→93%. Absolute expansion increasing.</p></div><div class="rbs"><span class="rb rb-lm">L:Med</span><span class="rb rb-ih">I:High</span></div></div>
-    <div class="rk"><div><h4>SBC dilution >7%</h4><p>9.4% SBC/rev lowest in comp set. Actual dilution was 6%/yr (SPAC warrants now done).</p></div><div class="rbs"><span class="rb rb-ll">L:Low</span><span class="rb rb-im">I:Med</span></div></div>
+  <!-- RISKS -->
+  <div class="sc">Risk Register — All risks modeled into Bear Case ($10.62)</div>
+  <div class="rl mb">
+    <div class="rk"><div><h4>Apple/Google restrict access</h4><p>Industry-wide, not competitive. Platform 55%+ of ARR. Spring '26 covers iPhone 17.</p></div><div class="rbs"><span class="rb rb-lm">L:Med</span><span class="rb rb-ih">I:High</span></div></div>
+    <div class="rk"><div><h4>Federal freeze extends FY27 ★</h4><p>UPGRADED. Thesis holds without fed. But Bull loses ~$3-4. State/local +19%, EMEA +24%.</p></div><div class="rbs"><span class="rb rb-mh">L:M-H</span><span class="rb rb-ih">I:High</span></div></div>
+    <div class="rk"><div><h4>NRR continues below 110%</h4><p>Denominator effect. Gross retention 91%→93%. Absolute expansion increasing.</p></div><div class="rbs"><span class="rb rb-lm">L:Med</span><span class="rb rb-ih">I:High</span></div></div>
+    <div class="rk"><div><h4>SBC dilution >7%/yr</h4><p>9.4% below 11.2% median but rose from 5.1%. Model 4-5% Base, 7-8% Bear. SPAC warrants done.</p></div><div class="rbs"><span class="rb rb-ll">L:Low</span><span class="rb rb-im">I:Med</span></div></div>
   </div>
 
-  <!-- CLOSING -->
-  <div class="close">
-    <div class="cs">Buy CLBT · $21.56 · 54% Upside · 24% 2-Year IRR · 2.7x Asymmetry</div>
-    <div class="cd">The market is using the wrong mental model. At $14, the entire platform premium is free.</div>
+  <!-- CLOSE -->
+  <div class="cl2">
+    <div class="c1">Buy CLBT · $21.56 · 54% Upside · 24% 2yr IRR · Conviction: HIGH</div>
+    <div class="c2">At $14, you pay DCF floor and get the platform moat for free. The market is using the wrong mental model.</div>
   </div>
 
 </div>
